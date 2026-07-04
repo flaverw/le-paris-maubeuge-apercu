@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Le Paris & Les Friteries de Paris — démonstration Everywhere</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,500&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--noir:#141110;--noir2:#1e1a17;--or:#c9a24b;--or-c:#e3c47f;--creme:#f3ecdd;--sapin:#22453a}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;min-height:100vh;background:var(--noir);color:var(--creme);display:flex;align-items:center;justify-content:center;padding:26px}
+.hub{max-width:760px;width:100%;text-align:center}
+.logo{height:78px;border-radius:5px;margin:0 auto 18px;box-shadow:0 12px 30px rgba(0,0,0,.5)}
+.sur{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--or);font-weight:600;margin-bottom:12px}
+h1{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(28px,5vw,42px);line-height:1.06}
+h1 em{font-style:italic;font-weight:500;color:var(--or-c)}
+.sous{margin:14px auto 30px;color:#c9bda6;max-width:50ch;font-size:15.5px}
+a.porte{display:flex;align-items:center;gap:18px;text-align:left;text-decoration:none;color:inherit;background:rgba(243,236,221,.05);border:1px solid rgba(201,162,75,.3);border-radius:12px;padding:24px 26px;margin-bottom:14px;transition:.2s}
+a.porte:hover{border-color:var(--or);background:rgba(243,236,221,.09);transform:translateY(-2px)}
+a.porte .ic{font-size:32px;flex-shrink:0}
+a.porte .tx{flex:1}
+a.porte .l{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--or)}
+a.porte h2{font-family:'Playfair Display',serif;font-weight:600;font-size:22px;color:var(--creme);margin:5px 0 6px}
+a.porte p{font-size:14px;color:#c9bda6;line-height:1.5}
+a.porte .go{margin-left:auto;font-size:22px;color:var(--or-c);flex-shrink:0}
+a.etude{background:linear-gradient(100deg,var(--sapin),#356453);border-color:#4d7a67}
+.pied{margin-top:28px;font-size:12px;color:#8a7f6c}
+@media(max-width:620px){a.porte{flex-direction:column;text-align:center}a.porte .go{margin:0}}
+</style>
+</head>
+<body>
+<div class="hub">
+  <div class="sur">Place des Nations · Maubeuge — démonstration</div>
+  <img class="logo" src="maquette/photos/logo-le-paris.jpg" alt="Le Paris">
+  <h1>Vos deux maisons,<br><em>réunies en ligne.</em></h1>
+  <p class="sous">Le café Le Paris et le restaurant Les Friteries de Paris, préparés à partir de vos
+  vraies photos, de vos avis et de votre carte — une seule adresse pour les deux.</p>
+
+  <a class="porte" href="maquette/">
+    <div class="ic">🗼</div>
+    <div class="tx"><div class="l">La maquette</div>
+      <h2>Voir votre site</h2>
+      <p>Une vitrine unifiée à votre image — le café, le restaurant, la terrasse, la réservation et la commande en direct.</p></div>
+    <div class="go">→</div>
+  </a>
+
+  <a class="porte etude" href="etude/?e=Le+Paris+%26+Les+Friteries+de+Paris">
+    <div class="ic">🧮</div>
+    <div class="tx"><div class="l">En bonus · sous 48 h</div>
+      <h2>Votre étude d'économies</h2>
+      <p>Confiez-nous vos contrats (site, réservation, livraison, caisse, télécom, énergie, banque…). On regarde ce qu'on peut <b>remplacer, améliorer ou renégocier</b>. Estimation prudente, sans engagement.</p></div>
+    <div class="go">→</div>
+  </a>
+
+  <p class="pied">Démonstration Everywhere — non indexée, formulaires inertes, aucune donnée collectée.
+  Contenus et tarifs repris de vos établissements ; tout se valide ensemble.</p>
+</div>
+</body>
+</html>

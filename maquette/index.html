@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Le Paris & Les Friteries de Paris — Place des Nations, Maubeuge</title>
+<meta name="description" content="Le café Le Paris et le restaurant Les Friteries de Paris, côte à côte Place des Nations à Maubeuge. Terrasse, brasserie du Nord, réservation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,800;1,500&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noir:#141110; --noir2:#1e1a17; --or:#c9a24b; --or-c:#e3c47f; --bleu:#2c5686; --bleu-c:#4d7cb0;
+  --creme:#f3ecdd; --papier:#faf5ea; --gris:#8c8377; --encre:#211d18;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--papier);color:var(--encre);font-size:17px;line-height:1.65}
+h1,h2,h3,.serif{font-family:'Playfair Display',Georgia,serif}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+.gold{color:var(--or)}
+.btn{display:inline-flex;align-items:center;gap:.5em;font-family:'Inter',sans-serif;font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;border:0;border-radius:2px;padding:15px 28px;transition:.2s}
+.btn-or{background:var(--or);color:#20180a}
+.btn-or:hover{background:var(--or-c)}
+.btn-ligne{background:transparent;border:1px solid var(--or);color:var(--or)}
+.btn-ligne:hover{background:var(--or);color:#20180a}
+
+.demo{position:fixed;top:0;left:0;right:0;z-index:200;background:#0d0b0a;color:#e9dcc0;text-align:center;font-size:11.5px;letter-spacing:.8px;text-transform:uppercase;padding:5px 10px;border-bottom:1px solid rgba(201,162,75,.4)}
+.demo b{color:var(--or)}
+
+/* motif Tour Eiffel + filet or */
+.filet{height:1px;background:linear-gradient(90deg,transparent,var(--or),transparent);opacity:.5}
+
+header.site{position:sticky;top:24px;z-index:150;background:rgba(20,17,16,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,162,75,.25)}
+header.site .wrap{display:flex;align-items:center;gap:16px;height:66px}
+header .marque{display:flex;align-items:center;gap:12px}
+header .marque img{height:40px;width:auto;border-radius:3px}
+header .marque .n{font-family:'Playfair Display',serif;color:var(--creme);font-size:17px;font-weight:600;line-height:1.1}
+header .marque .n span{color:var(--or);font-size:12px;letter-spacing:.18em;text-transform:uppercase;display:block;font-family:'Inter';font-weight:500}
+header nav{margin-left:auto;display:flex;gap:4px;align-items:center}
+header nav a{font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#d9cdb8;padding:9px 13px;opacity:.85}
+header nav a:hover{opacity:1;color:var(--or)}
+header nav a.cta{background:var(--or);color:#20180a;border-radius:2px;opacity:1}
+
+/* HERO */
+.hero{position:relative;background:var(--noir);color:var(--creme);overflow:hidden}
+.hero .bg{position:absolute;inset:0;z-index:0}
+.hero .bg img{width:100%;height:100%;object-fit:cover;opacity:.42;filter:saturate(.85)}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(120% 90% at 70% 20%,transparent,rgba(20,17,16,.55) 70%,var(--noir))}
+.hero .wrap{position:relative;z-index:2;padding:82px 22px 74px;text-align:center}
+.hero .eiffel{width:34px;margin:0 auto 14px;opacity:.9}
+.hero .sur{font-size:12.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--or);font-weight:600;margin-bottom:16px}
+.hero h1{font-size:clamp(38px,7vw,76px);font-weight:800;line-height:1.02}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--or-c)}
+.hero .sous{margin:18px auto 0;max-width:46ch;font-size:18.5px;color:#e6dcc9;font-family:'Cormorant Garamond',serif;font-size:22px}
+.hero .deux{margin:14px auto 0;font-size:13.5px;letter-spacing:.06em;color:#c9bda6}
+.hero .deux b{color:var(--creme)}
+.hero .chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:26px 0 26px}
+.hero .chip{border:1px solid rgba(201,162,75,.45);border-radius:999px;padding:7px 15px;font-size:13px;color:#e9dcc0}
+.hero .chip b{color:var(--or)}
+.hero .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* bandeau enseignes */
+.deux-maisons{background:var(--noir2);color:var(--creme);padding:0}
+.deux-maisons .grid{display:grid;grid-template-columns:1fr 1fr}
+.maison{position:relative;padding:52px 40px;overflow:hidden;border-top:1px solid rgba(201,162,75,.25)}
+.maison:first-child{border-right:1px solid rgba(201,162,75,.25)}
+.maison .lbl{font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--or);font-weight:600}
+.maison h2{font-size:30px;font-weight:600;margin:8px 0 6px}
+.maison .type{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:#cdbfa6;margin-bottom:14px}
+.maison p{font-size:15px;color:#c9bda6;margin-bottom:18px}
+.maison .go{color:var(--or);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.maison .adr{position:absolute;top:22px;right:26px;font-size:12px;color:var(--gris)}
+
+section{padding:82px 0}
+.chap{text-align:center;margin-bottom:40px}
+.chap .k{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--or);font-weight:600}
+.chap h2{font-size:clamp(30px,4.5vw,46px);font-weight:600;color:var(--encre);margin-top:8px}
+.chap h2 em{font-style:italic;color:var(--bleu)}
+.chap p{max-width:56ch;margin:10px auto 0;color:#5b5348}
+
+/* café (fond clair) */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.duo.rev{direction:rtl}.duo.rev>*{direction:ltr}
+.duo .txt h3{font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--or);margin-bottom:10px}
+.duo .txt h2{font-size:34px;font-weight:600;margin-bottom:14px}
+.duo .txt p{color:#4f483d;margin-bottom:12px}
+.duo .liste{list-style:none;margin:16px 0}
+.duo .liste li{padding:6px 0 6px 26px;position:relative;font-size:15.5px}
+.duo .liste li::before{content:"";position:absolute;left:0;top:12px;width:14px;height:1px;background:var(--or)}
+.duo .ph{position:relative}
+.duo .ph img{border-radius:4px;box-shadow:0 22px 50px rgba(30,20,10,.28);width:100%;object-fit:cover;aspect-ratio:4/3}
+.duo .ph .mini{position:absolute;width:44%;bottom:-22px;box-shadow:0 16px 34px rgba(30,20,10,.4);border:3px solid var(--papier)}
+.duo .ph .mini.g{left:-18px}.duo .ph .mini.d{right:-18px}
+
+/* restaurant (fond noir) */
+.resto{background:var(--noir);color:var(--creme)}
+.resto .chap h2{color:var(--creme)}
+.resto .duo .txt p{color:#c9bda6}
+.resto .duo .liste li{color:#d9cdb8}
+.plats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:14px}
+.plat{background:var(--noir2);border:1px solid rgba(201,162,75,.22);border-radius:4px;padding:18px}
+.plat .t{font-family:'Playfair Display',serif;font-size:19px;color:var(--or-c)}
+.plat .d{font-size:14px;color:#bdb1a0;margin-top:5px}
+.plat .m{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--or);margin-top:8px}
+.resto .note{text-align:center;color:var(--gris);font-size:13.5px;margin-top:26px;font-style:italic}
+
+/* réservation */
+.resa{background:var(--papier)}
+.resa .panneau{background:#fff;border:1px solid #e8ddc9;border-radius:6px;box-shadow:0 18px 44px rgba(30,20,10,.1);max-width:760px;margin:0 auto;padding:30px}
+.seg{display:flex;gap:8px;margin-bottom:8px}
+.seg button{flex:1;border:1px solid #e3d6bd;background:#faf5ea;border-radius:3px;padding:13px;font-family:'Playfair Display',serif;font-size:17px;cursor:pointer;color:#6a6154}
+.seg button.on{background:var(--noir);color:var(--or);border-color:var(--noir)}
+.seg.mode button{font-family:'Inter';font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:11px}
+.champs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.champ label{display:block;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--gris);font-weight:600;margin-bottom:6px}
+.champ input,.champ select{width:100%;border:1px solid #e3d6bd;border-radius:3px;padding:12px 13px;font-family:'Inter';font-size:15px;background:#fff}
+.champ.full{grid-column:1/-1}
+.resa .go{margin-top:18px}
+.resa .go .btn{width:100%;justify-content:center;background:var(--noir);color:var(--or)}
+.resa .go .btn:hover{background:var(--noir2)}
+.note-demo{font-size:12.5px;color:var(--gris);text-align:center;margin-top:12px}
+
+/* la place */
+.place{background:var(--bleu);color:#eaf1f8;position:relative}
+.place .chap .k{color:#bcd3ec}.place .chap h2{color:#fff}.place .chap h2 em{color:#ffe0a8}
+.place .recit{max-width:60ch;margin:0 auto;text-align:center;font-family:'Cormorant Garamond',serif;font-size:21px;line-height:1.6;color:#e7f0fa}
+.place .jalons{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.place .j{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:5px;padding:20px;text-align:center}
+.place .j .a{font-family:'Playfair Display',serif;font-size:22px;color:#ffe0a8}
+.place .j .t{font-size:14px;color:#d6e3f2;margin-top:6px}
+
+/* avis */
+.avis .col{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.avis .bloc h3{font-family:'Playfair Display',serif;font-size:22px;margin-bottom:4px}
+.avis .bloc .note{color:var(--or);font-weight:700;font-size:14px;letter-spacing:.04em;margin-bottom:14px}
+.av{background:#fff;border:1px solid #ece1cd;border-radius:5px;padding:16px 18px;margin-bottom:12px;box-shadow:0 8px 22px rgba(30,20,10,.06)}
+.av .st{color:var(--or);letter-spacing:2px;font-size:13px}
+.av p{font-style:italic;color:#4f483d;font-size:15px;margin:6px 0}
+.av .q{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gris)}
+
+/* infos */
+.infos{background:var(--noir);color:var(--creme)}
+.infos .chap h2{color:var(--creme)}
+.infos .col{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.icard{background:var(--noir2);border:1px solid rgba(201,162,75,.22);border-radius:5px;padding:26px}
+.icard .lbl{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--or);font-weight:600}
+.icard h3{font-family:'Playfair Display',serif;font-size:24px;margin:6px 0 12px}
+.icard p{font-size:15px;color:#c9bda6}
+.icard .tel{color:var(--or-c);font-weight:600}
+.icard ul{list-style:none;margin-top:8px}
+.icard li{display:flex;justify-content:space-between;gap:12px;padding:3px 0;font-size:14.5px;color:#c9bda6}
+.icard li b{color:var(--creme)}
+
+footer{background:#0d0b0a;color:#9a8f7c;text-align:center;padding:40px 22px;font-size:13.5px}
+footer .logos{display:flex;gap:24px;justify-content:center;align-items:center;margin-bottom:14px}
+footer .logos img{height:46px;border-radius:3px}
+footer .ev{margin-top:12px;font-size:12px;color:#7a7061}
+footer .ev b{color:var(--or)}
+
+.modal{position:fixed;inset:0;background:rgba(13,11,10,.62);display:none;align-items:center;justify-content:center;z-index:300;padding:20px}
+.modal.show{display:flex}
+.modal .box{background:var(--papier);border:1px solid var(--or);border-radius:6px;max-width:440px;padding:30px;text-align:center}
+.modal h3{font-size:24px;margin-bottom:8px}
+.modal p{color:#4f483d;font-size:15px}
+.modal .dtag{background:#fff;border:1px solid #ece1cd;border-radius:5px;padding:10px;font-size:12.5px;color:var(--bleu);margin:14px 0}
+
+@media(max-width:880px){
+  .deux-maisons .grid{grid-template-columns:1fr}
+  .maison:first-child{border-right:0}
+  .duo,.duo.rev{grid-template-columns:1fr;direction:ltr}
+  .duo .ph{order:-1}
+  .avis .col,.infos .col{grid-template-columns:1fr}
+  .place .jalons{grid-template-columns:1fr}
+  header nav a:not(.cta){display:none}
+  .champs{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="demo">Maquette de démonstration — proposée par <b>Everywhere</b> · une seule adresse en ligne pour vos deux maisons · aucune réservation réelle</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="marque" href="#haut">
+      <img src="photos/logo-le-paris.jpg" alt="Le Paris">
+      <div class="n">Le Paris <span>& Les Friteries de Paris</span></div>
+    </a>
+    <nav>
+      <a href="#cafe">Le café</a>
+      <a href="#restaurant">Le restaurant</a>
+      <a href="#place">La place</a>
+      <a href="#reserver" class="cta">Réserver</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero" id="haut">
+  <div class="bg"><img src="photos/terrasse-chaises.jpg" alt="Terrasse Place des Nations"></div>
+  <div class="wrap">
+    <svg class="eiffel" viewBox="0 0 40 64" fill="none" stroke="#c9a24b" stroke-width="1.4" aria-hidden="true">
+      <path d="M20 2 L20 58 M14 58 L26 58 M20 2 C 17 14 12 30 6 58 M20 2 C 23 14 28 30 34 58 M12 26 H28 M9 40 H31 M20 2 L20 8"/>
+    </svg>
+    <div class="sur">Place des Nations · Maubeuge</div>
+    <h1>Deux adresses,<br><em>une place.</em></h1>
+    <p class="sous">Le café <b class="gold">Le Paris</b> et le restaurant <b class="gold">Les Friteries de Paris</b>, côte à côte, sur la plus belle terrasse du centre.</p>
+    <div class="deux"><b>Le café</b> pour l'apéro et le matin au soleil · <b>le restaurant</b> pour s'attabler, brasserie du Nord</div>
+    <div class="chips">
+      <span class="chip"><b>★ 3,9/5</b> · #2 des bars de Maubeuge</span>
+      <span class="chip">Brasserie · plats du jour maison</span>
+      <span class="chip">Grande terrasse · face au marché du mercredi</span>
+    </div>
+    <div class="actions">
+      <a class="btn btn-or" href="#reserver">Réserver une table</a>
+      <a class="btn btn-ligne" href="#cafe">Découvrir les deux maisons</a>
+    </div>
+  </div>
+</div>
+
+<!-- LES DEUX MAISONS -->
+<div class="deux-maisons">
+  <div class="grid">
+    <div class="maison">
+      <div class="adr">36 Place des Nations</div>
+      <div class="lbl">Le café</div>
+      <h2 class="serif">Le Paris</h2>
+      <div class="type">café · brasserie · terrasse</div>
+      <p>Le rendez-vous de la place : un café dès le matin, l'apéro au soleil, des planches à partager et des soirées à thème.</p>
+      <a class="go" href="#cafe">Le café →</a>
+    </div>
+    <div class="maison">
+      <div class="adr">40 Place des Nations</div>
+      <div class="lbl">Le restaurant</div>
+      <h2 class="serif">Les Friteries de Paris</h2>
+      <div class="type">brasserie du Nord · à s'attabler</div>
+      <p>La table d'à côté : carbonnade flamande, vol-au-vent, plats du jour maison et burgers, dans une salle chaleureuse.</p>
+      <a class="go" href="#restaurant">Le restaurant →</a>
+    </div>
+  </div>
+</div>
+
+<!-- LE CAFÉ -->
+<section id="cafe">
+  <div class="wrap">
+    <div class="chap"><div class="k">36 Place des Nations · le café</div><h2>Le Paris, <em>à la terrasse.</em></h2></div>
+    <div class="duo">
+      <div class="txt">
+        <h3>Café · brasserie · terrasse</h3>
+        <h2 class="serif">Le matin, l'apéro, la place.</h2>
+        <p>Ouvert dès le matin, <b>Le Paris</b> est le café de la Place des Nations : on y prend son
+        premier café au soleil, on y refait le monde à l'apéro, on s'y retrouve entre amis.</p>
+        <ul class="liste">
+          <li>La grande <b>terrasse</b> plein soleil, face au marché du mercredi</li>
+          <li>Cafés, bières, cocktails avec et sans alcool, apéritifs</li>
+          <li>Planches de charcuterie &amp; fromage à partager</li>
+          <li>Soirées à thème qui font vivre la place</li>
+        </ul>
+        <a class="btn btn-ligne" style="border-color:var(--or);color:#20180a;background:var(--or)" href="#reserver">Réserver au café</a>
+      </div>
+      <div class="ph">
+        <img src="photos/terrasse-chaises.jpg" alt="La terrasse du Paris, chaises bistrot">
+        <img class="mini d" src="photos/resto-ta1.jpg" alt="Le comptoir du Paris">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LE RESTAURANT -->
+<section class="resto" id="restaurant">
+  <div class="wrap">
+    <div class="chap"><div class="k">40 Place des Nations · le restaurant</div><h2>Les Friteries de Paris, <em>à table.</em></h2></div>
+    <div class="duo rev">
+      <div class="txt">
+        <h3>Brasserie du Nord</h3>
+        <h2 class="serif">La cuisine qui tient au corps.</h2>
+        <p>Juste à côté du café, on passe à table : une <b>brasserie du Nord</b> généreuse, un patron
+        en salle, un accueil qu'on vous rend chaleureux — ce que vos clients citent en premier.</p>
+        <ul class="liste">
+          <li>Carbonnade flamande, vol-au-vent, entrecôte</li>
+          <li>Burgers et américains, à emporter ou sur place</li>
+          <li>Les <b>plats du jour maison</b>, qui changent chaque semaine</li>
+        </ul>
+        <div class="plats">
+          <div class="plat"><div class="t">Tomate farcie maison</div><div class="d">et ses frites</div><div class="m">Plat du jour</div></div>
+          <div class="plat"><div class="t">Escalope champignons</div><div class="d">sauce crème</div><div class="m">Plat du jour</div></div>
+          <div class="plat"><div class="t">Carbonnade flamande</div><div class="d">la brasserie du Nord</div><div class="m">La carte</div></div>
+        </div>
+      </div>
+      <div class="ph">
+        <img src="photos/salle-vintage.jpg" alt="La salle des Friteries de Paris">
+        <img class="mini g" src="photos/plat-burger.jpg" alt="Burger et frites">
+      </div>
+    </div>
+    <p class="note">Votre carte complète et vos tarifs s'affichent ici, lisibles et à jour — aujourd'hui, ils n'existent nulle part en ligne.</p>
+  </div>
+</section>
+
+<!-- RÉSERVATION & EMPORTER -->
+<section class="resa" id="reserver">
+  <div class="wrap">
+    <div class="chap"><div class="k">En direct · sans commission</div><h2>Réserver &amp; <em>commander.</em></h2>
+      <p>Une table au café ou au restaurant, ou une commande à emporter — directement chez vous, sans intermédiaire.</p></div>
+    <div class="panneau">
+      <div class="seg" id="seg-lieu">
+        <button data-l="cafe" class="on">☕ Le Paris — le café</button>
+        <button data-l="resto">🍽️ Les Friteries — le restaurant</button>
+      </div>
+      <div class="seg mode" id="seg-mode">
+        <button data-m="table" class="on">Réserver une table</button>
+        <button data-m="emporter">Commander à emporter</button>
+      </div>
+      <div class="champs">
+        <div class="champ"><label>Date</label><input type="text" placeholder="Ex. vendredi 11 juillet"></div>
+        <div class="champ"><label id="lab2">Heure</label><select id="sel2"><option>12h00</option><option>12h30</option><option>13h00</option><option>19h00</option><option>19h30</option><option>20h00</option><option>20h30</option></select></div>
+        <div class="champ" id="ch-couverts"><label>Couverts</label><select><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>Groupe (+6)</option></select></div>
+        <div class="champ"><label>Nom</label><input type="text" placeholder="Votre nom"></div>
+        <div class="champ full"><label>Téléphone</label><input type="tel" placeholder="06 …"></div>
+      </div>
+      <div class="go"><button class="btn" onclick="valider()">Confirmer</button></div>
+      <p class="note-demo">Démonstration — aucune réservation n'est réellement enregistrée. Dans la vraie version : confirmation par SMS, et vos deux maisons au même endroit.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LA PLACE -->
+<section class="place" id="place">
+  <div class="wrap">
+    <div class="chap"><div class="k">Le décor</div><h2>La Place des <em>Nations.</em></h2></div>
+    <p class="recit">Au cœur de Maubeuge reconstruite dans les années 50 par l'architecte André Lurçat,
+    la Place des Nations est faite pour la vie de café : de larges galeries, une grande place ouverte,
+    et le marché qui s'y installe chaque mercredi matin. Le Paris et Les Friteries de Paris en occupent
+    deux adresses voisines — deux terrasses sur la même place.</p>
+    <div class="jalons">
+      <div class="j"><div class="a">Années 50</div><div class="t">La place dessinée par André Lurçat, cœur de la ville reconstruite</div></div>
+      <div class="j"><div class="a">Le mercredi</div><div class="t">Le marché s'installe juste devant les terrasses</div></div>
+      <div class="j"><div class="a">36 &amp; 40</div><div class="t">Le café et le restaurant, côte à côte</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- AVIS -->
+<section class="avis">
+  <div class="wrap">
+    <div class="chap"><div class="k">Ils y sont attachés</div><h2>Ce qu'on <em>en dit.</em></h2></div>
+    <div class="col">
+      <div class="bloc">
+        <h3>Le Paris — le café</h3>
+        <div class="note">★ 3,9/5 · 417 avis Google · #2 des bars de Maubeuge</div>
+        <div class="av"><div class="st">★★★★★</div><p>« Pour de bons moments : convivial, sympathique, de qualité. Je recommande. »</p><div class="q">Philippe M. · Google</div></div>
+        <div class="av"><div class="st">★★★★★</div><p>« Grande terrasse où le soleil caresse les visages — planches charcuterie et fromage incontournables. »</p><div class="q">Avis client · Google</div></div>
+      </div>
+      <div class="bloc">
+        <h3>Les Friteries de Paris — le restaurant</h3>
+        <div class="note">★ 4/5 · brasserie · TripAdvisor &amp; Google</div>
+        <div class="av"><div class="st">★★★★★</div><p>« On y mange très bien, le personnel est super sympa. Patron chaleureux, cadre agréable. »</p><div class="q">Avis client · TripAdvisor</div></div>
+        <div class="av"><div class="st">★★★★★</div><p>« Les plats du jour sont à tomber, un vrai délice, service parfait. Assiettes copieuses. »</p><div class="q">Avis client · Google</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFOS -->
+<section class="infos" id="infos">
+  <div class="wrap">
+    <div class="chap"><div class="k">Nous trouver</div><h2>Sur la <em>place.</em></h2></div>
+    <div class="col">
+      <div class="icard">
+        <div class="lbl">Le café</div>
+        <h3 class="serif">Le Paris</h3>
+        <p>36 Place des Nations<br>59600 Maubeuge<br><span class="tel">03 27 64 63 16</span></p>
+        <ul><li><b>Tous les jours</b><span>dès le matin</span></li><li><b>Terrasse</b><span>sur la place</span></li></ul>
+      </div>
+      <div class="icard">
+        <div class="lbl">Le restaurant</div>
+        <h3 class="serif">Les Friteries de Paris</h3>
+        <p>40 Place des Nations<br>59600 Maubeuge<br><span class="tel">03 61 21 72 08</span></p>
+        <ul><li><b>Midi &amp; soir</b><span>service en salle</span></li><li><b>À emporter</b><span>&amp; sur place</span></li></ul>
+        <p style="font-size:12.5px;color:var(--gris);margin-top:10px">Horaires exacts à confirmer et afficher — aujourd'hui, ils divergent d'un annuaire à l'autre.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="logos"><img src="photos/logo-le-paris.jpg" alt="Le Paris"><img src="photos/logo-friteries.jpg" alt="Les Friteries de Paris"></div>
+  <div>Le Paris &amp; Les Friteries de Paris · Place des Nations, 59600 Maubeuge</div>
+  <div class="ev">Maquette de démonstration réalisée par <b>Everywhere</b> — une seule adresse en ligne pour vos deux maisons. Vraies photos et avis publics ; contenus et tarifs à valider ensemble. Aucune donnée collectée.</div>
+</footer>
+
+<div class="modal" id="modal"><div class="box">
+  <h3 class="serif" id="mtitre">C'est noté — merci.</h3>
+  <p id="mtexte"></p>
+  <div class="dtag">🛈 Démonstration : rien n'est réellement enregistré. En vrai, la demande arrive directement chez vous, sans commission — et vos deux maisons partagent la même adresse en ligne.</div>
+  <button class="btn btn-or" onclick="document.getElementById('modal').classList.remove('show')">Fermer</button>
+</div></div>
+
+<script>
+var lieu='cafe', mode='table';
+function seg(id,attr,cb){var g=document.getElementById(id);g.querySelectorAll('button').forEach(function(b){b.onclick=function(){g.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');cb(b.getAttribute(attr));};});}
+seg('seg-lieu','data-l',function(v){lieu=v; syncMode();});
+seg('seg-mode','data-m',function(v){mode=v; syncMode();});
+function syncMode(){
+  // le café ne fait pas d'emporter : on masque le mode emporter pour le café
+  var emp=document.querySelector('#seg-mode [data-m="emporter"]');
+  if(lieu==='cafe'){ emp.style.display='none'; if(mode==='emporter'){mode='table'; document.querySelector('#seg-mode [data-m="table"]').click();} }
+  else { emp.style.display=''; }
+  var couv=document.getElementById('ch-couverts'), lab=document.getElementById('lab2');
+  if(mode==='emporter'){ couv.style.display='none'; lab.textContent='Retrait'; }
+  else { couv.style.display=''; lab.textContent='Heure'; }
+}
+syncMode();
+function valider(){
+  var lieuN = lieu==='cafe' ? 'Le Paris (le café)' : 'Les Friteries de Paris (le restaurant)';
+  var acte = mode==='emporter' ? 'Commande à emporter' : 'Réservation de table';
+  document.getElementById('mtitre').textContent = acte + ' — ' + (lieu==='cafe'?'Le Paris':'Les Friteries');
+  document.getElementById('mtexte').textContent = acte + ' chez ' + lieuN + '. Une équipe vous confirme au plus vite.';
+  document.getElementById('modal').classList.add('show');
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')document.getElementById('modal').classList.remove('show');});
+</script>
+</body>
+</html>
