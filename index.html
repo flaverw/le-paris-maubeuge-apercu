@@ -1,70 +1,76 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
+<!-- cadenas-everywhere -->
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Le Paris & Les Friteries de Paris — démonstration Everywhere</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,500&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Accès protégé — Everywhere</title>
 <style>
-:root{--noir:#141110;--noir2:#1e1a17;--or:#c9a24b;--or-c:#e3c47f;--creme:#f3ecdd;--sapin:#22453a}
+:root{--noir:#14110f;--or:#c9a24b;--creme:#f3ecdd}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;min-height:100vh;background:var(--noir);color:var(--creme);display:flex;align-items:center;justify-content:center;padding:26px}
-.hub{max-width:760px;width:100%;text-align:center}
-.logo{height:78px;border-radius:5px;margin:0 auto 18px;box-shadow:0 12px 30px rgba(0,0,0,.5)}
-.sur{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--or);font-weight:600;margin-bottom:12px}
-h1{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(28px,5vw,42px);line-height:1.06}
-h1 em{font-style:italic;font-weight:500;color:var(--or-c)}
-.sous{margin:14px auto 30px;color:#c9bda6;max-width:50ch;font-size:15.5px}
-a.porte{display:flex;align-items:center;gap:18px;text-align:left;text-decoration:none;color:inherit;background:rgba(243,236,221,.05);border:1px solid rgba(201,162,75,.3);border-radius:12px;padding:24px 26px;margin-bottom:14px;transition:.2s}
-a.porte:hover{border-color:var(--or);background:rgba(243,236,221,.09);transform:translateY(-2px)}
-a.porte .ic{font-size:32px;flex-shrink:0}
-a.porte .tx{flex:1}
-a.porte .l{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--or)}
-a.porte h2{font-family:'Playfair Display',serif;font-weight:600;font-size:22px;color:var(--creme);margin:5px 0 6px}
-a.porte p{font-size:14px;color:#c9bda6;line-height:1.5}
-a.porte .go{margin-left:auto;font-size:22px;color:var(--or-c);flex-shrink:0}
-a.etude{background:linear-gradient(100deg,var(--sapin),#356453);border-color:#4d7a67}
-.pied{margin-top:28px;font-size:12px;color:#8a7f6c}
-@media(max-width:620px){a.porte{flex-direction:column;text-align:center}a.porte .go{margin:0}}
-</style>
-</head>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;min-height:100vh;
+ background:radial-gradient(120% 120% at 50% 0%,#241f1a,var(--noir));color:var(--creme);
+ display:flex;align-items:center;justify-content:center;padding:24px}
+.card{max-width:420px;width:100%;text-align:center}
+.mark{font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--or);margin-bottom:18px}
+.lock{font-size:40px;margin-bottom:14px}
+h1{font-size:22px;font-weight:600;line-height:1.25;margin-bottom:8px}
+p.sub{font-size:14px;color:#b9b0a0;margin-bottom:22px;line-height:1.5}
+form{display:flex;gap:8px;flex-direction:column}
+input{width:100%;background:#1c1814;border:1px solid rgba(201,162,75,.4);color:var(--creme);
+ padding:14px 16px;font-size:16px;border-radius:8px;text-align:center;letter-spacing:.05em}
+input:focus{outline:none;border-color:var(--or)}
+button{background:var(--or);color:var(--noir);border:none;padding:14px;font-size:15px;font-weight:600;
+ border-radius:8px;cursor:pointer;letter-spacing:.03em}
+button:hover{filter:brightness(1.08)}
+.err{color:#e6857a;font-size:13px;min-height:18px;margin-top:4px}
+.foot{margin-top:26px;font-size:11px;color:#7c7364;line-height:1.5}
+</style></head>
 <body>
-<div class="hub">
-  <div class="sur">Place des Nations · Maubeuge — démonstration</div>
-  <img class="logo" src="maquette/photos/logo-le-paris.jpg" alt="Le Paris">
-  <h1>Vos deux maisons,<br><em>réunies en ligne.</em></h1>
-  <p class="sous">Le café Le Paris et le restaurant Les Friteries de Paris, préparés à partir de vos
-  vraies photos, de vos avis et de votre carte — une seule adresse pour les deux.</p>
-
-  <a class="porte" href="maquette/">
-    <div class="ic">🗼</div>
-    <div class="tx"><div class="l">La maquette</div>
-      <h2>Voir votre site</h2>
-      <p>Une vitrine unifiée à votre image — le café, le restaurant, la terrasse, la réservation et la commande en direct.</p></div>
-    <div class="go">→</div>
-  </a>
-
-  <a class="porte" href="offre/">
-    <div class="ic">✦</div>
-    <div class="tx"><div class="l">L'offre</div>
-      <h2>Nos trois formules</h2>
-      <p>Origine (le point de départ), Singulier et Everywhere — en clair, sans engagement de durée. Ce que comprend chaque formule.</p></div>
-    <div class="go">→</div>
-  </a>
-
-  <a class="porte etude" href="etude/?e=Le+Paris+%26+Les+Friteries+de+Paris">
-    <div class="ic">🧮</div>
-    <div class="tx"><div class="l">En bonus · sous 48 h</div>
-      <h2>Votre étude d'économies</h2>
-      <p>Confiez-nous vos contrats (site, réservation, livraison, caisse, télécom, énergie, banque…). On regarde ce qu'on peut <b>remplacer, améliorer ou renégocier</b>. Estimation prudente, sans engagement.</p></div>
-    <div class="go">→</div>
-  </a>
-
-  <p class="pied">Démonstration Everywhere — non indexée, formulaires inertes, aucune donnée collectée.
-  Contenus et tarifs repris de vos établissements ; tout se valide ensemble.</p>
+<div class="card">
+  <div class="mark">Everywhere</div>
+  <div class="lock">&#128274;</div>
+  <h1>Accès protégé</h1>
+  <p class="sub">Cette démonstration est réservée. Saisissez votre code d'accès pour la consulter.</p>
+  <form id="f"><input id="pw" type="password" placeholder="Code d'accès" autocomplete="off" autofocus>
+  <button type="submit">Entrer</button></form>
+  <div class="err" id="e"></div>
+  <div class="foot">Everywhere — cabinet d'accompagnement numérique.<br>Contenu chiffré. Un code par visiteur, communiqué par Everywhere.</div>
 </div>
-</body>
-</html>
+<script>
+(function(){
+ var D={"v":1,"iters":210000,"iv":"XsGMfrmA0K4S2sf3","ct":"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","wraps":[{"role":"client","salt":"8EVynECa4W7ib3guscRjmw==","iv":"is27Q+IwiGH4Wk+q","wrapped":"p8Dy8tpn8q3Puf9k0EuLrKD3El+f0d6Q1c1K1LrKm9cG5RoKf0pDHIuMRhOfrCTB"}]};
+ var dec=function(s){var b=atob(s),u=new Uint8Array(b.length);for(var i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return u;};
+ var enc=new TextEncoder();
+ async function derive(pw,salt){
+  var km=await crypto.subtle.importKey('raw',enc.encode(pw),'PBKDF2',false,['deriveKey']);
+  return crypto.subtle.deriveKey({name:'PBKDF2',salt:salt,iterations:D.iters,hash:'SHA-256'},km,{name:'AES-GCM',length:256},false,['decrypt']);
+ }
+ async function tryUnlock(pw){
+  for(var i=0;i<D.wraps.length;i++){
+   var w=D.wraps[i];
+   try{
+    var wk=await derive(pw,dec(w.salt));
+    var ckRaw=new Uint8Array(await crypto.subtle.decrypt({name:'AES-GCM',iv:dec(w.iv)},wk,dec(w.wrapped)));
+    var ck=await crypto.subtle.importKey('raw',ckRaw,'AES-GCM',false,['decrypt']);
+    var html=new TextDecoder().decode(await crypto.subtle.decrypt({name:'AES-GCM',iv:dec(D.iv)},ck,dec(D.ct)));
+    return {ok:true,role:w.role,html:html};
+   }catch(e){}
+  }
+  return {ok:false};
+ }
+ function render(html){document.open();document.write(html);document.close();}
+ async function boot(){
+  var pw=null;try{pw=sessionStorage.getItem('ew_pass');}catch(e){}
+  if(pw){var r=await tryUnlock(pw);if(r.ok){render(r.html);return;}}
+  document.getElementById('f').addEventListener('submit',async function(ev){
+   ev.preventDefault();
+   var v=document.getElementById('pw').value;
+   document.getElementById('e').textContent='';
+   var r=await tryUnlock(v);
+   if(r.ok){try{sessionStorage.setItem('ew_pass',v);}catch(e){}render(r.html);}
+   else{document.getElementById('e').textContent='Code incorrect.';document.getElementById('pw').select();}
+  });
+ }
+ if(!crypto||!crypto.subtle){document.getElementById('e').textContent='Navigateur non compatible.';}else{boot();}
+})();
+</script>
+</body></html>
