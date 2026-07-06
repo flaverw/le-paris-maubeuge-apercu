@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Carte NFC — Le Paris &amp; Les Friteries de Paris · gabarit print</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Alex+Brush&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noir:#0f0c0a; --cuir:#181210; --or:#c9a24b; --or-c:#e7c988; --creme:#f3ecdd; --brume:#b9ad97;
+  --z:1.9; /* zoom écran ; 1 à l'impression */
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{background:var(--noir);color:var(--creme);font-family:'Inter',sans-serif;font-size:15px;line-height:1.6}
+a{color:var(--or-c)}
+.lab{text-transform:uppercase;letter-spacing:.3em;font-size:11px;font-weight:600}
+
+/* ================= habillage écran ================= */
+.page{max-width:900px;margin:0 auto;padding:44px 20px 90px}
+header{text-align:center;margin-bottom:34px}
+header .kk{color:var(--or);margin-bottom:12px}
+header h1{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(26px,4.4vw,38px);line-height:1.1}
+header h1 em{font-style:italic;font-weight:500;color:var(--or-c)}
+header p{color:#c9bda6;max-width:56ch;margin:14px auto 0;font-size:15px}
+.outils{text-align:center;margin:22px 0 34px}
+.outils button{background:var(--or);color:var(--noir);border:none;border-radius:999px;padding:12px 26px;
+  font-family:'Inter';font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.outils button:hover{background:var(--or-c)}
+.outils .hint{display:block;margin-top:10px;font-size:12px;color:#8a7f6c}
+h2.face-titre{font-family:'Playfair Display',serif;font-weight:600;font-size:20px;color:var(--or-c);
+  text-align:center;margin:34px 0 16px}
+
+/* ================= la carte (91,6 × 60 mm avec fond perdu) ================= */
+.feuille{display:flex;justify-content:center}
+.vue{width:calc(91.6mm * var(--z));height:calc(60mm * var(--z));position:relative}
+.carte{width:91.6mm;height:60mm;transform:scale(var(--z));transform-origin:top left;
+  position:relative;overflow:hidden;color:var(--creme);
+  background:
+    radial-gradient(120% 90% at 18% 0%,rgba(201,162,75,.14),transparent 55%),
+    radial-gradient(120% 100% at 82% 110%,rgba(201,162,75,.10),transparent 55%),
+    linear-gradient(150deg,#1c1512,var(--noir) 55%,#131009)}
+.carte .filet{position:absolute;inset:6mm;border:.3mm solid rgba(201,162,75,.75);pointer-events:none}
+.carte .coin{position:absolute;width:2.6mm;height:2.6mm;border-color:var(--or-c);border-style:solid;border-width:0}
+.carte .coin.a{top:5.1mm;left:5.1mm;border-top-width:.4mm;border-left-width:.4mm}
+.carte .coin.b{top:5.1mm;right:5.1mm;border-top-width:.4mm;border-right-width:.4mm}
+.carte .coin.c{bottom:5.1mm;left:5.1mm;border-bottom-width:.4mm;border-left-width:.4mm}
+.carte .coin.d{bottom:5.1mm;right:5.1mm;border-bottom-width:.4mm;border-right-width:.4mm}
+
+/* guides écran (masqués à l'impression) */
+.trait-coupe{position:absolute;inset:3mm;border:.2mm dashed rgba(231,201,136,.55);pointer-events:none}
+.zone-sure{position:absolute;inset:6mm;border:.2mm dashed rgba(231,201,136,.22);pointer-events:none}
+.legende{display:flex;gap:22px;justify-content:center;margin-top:14px;font-size:11.5px;color:#8a7f6c}
+.legende i{display:inline-block;width:16px;height:0;border-top:2px dashed rgba(231,201,136,.55);margin-right:6px;vertical-align:middle}
+.legende .s i{border-top-color:rgba(231,201,136,.22)}
+
+/* ---------- recto ---------- */
+.recto .centre{position:absolute;inset:6mm;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.recto .eiffel{width:9.5mm;margin-bottom:1.6mm;opacity:.95}
+.recto .nom1{font-family:'Alex Brush',cursive;font-size:24pt;line-height:.9;color:var(--or-c);
+  text-shadow:0 0 2.2mm rgba(231,201,136,.35)}
+.recto .et{font-family:'Playfair Display',serif;font-style:italic;font-size:7pt;color:var(--brume);margin:1.1mm 0 .6mm}
+.recto .nom2{font-family:'Alex Brush',cursive;font-size:13.5pt;line-height:1;color:var(--or-c)}
+.recto .ligne-or{width:16mm;height:.2mm;background:linear-gradient(90deg,transparent,var(--or),transparent);margin:2.2mm 0}
+.recto .adresse{font-family:'Inter';font-size:5.4pt;letter-spacing:.34em;text-transform:uppercase;font-weight:500;color:var(--creme)}
+
+/* ---------- verso ---------- */
+.verso .contenu{position:absolute;inset:6mm;display:grid;grid-template-columns:auto 1fr;gap:4mm;align-items:center;padding:2.4mm 3mm}
+.verso .qr-tuile{background:#fff;border-radius:1.2mm;padding:1.4mm;width:20.6mm;height:20.6mm;box-shadow:0 0 3mm rgba(231,201,136,.2)}
+.verso .qr-tuile img{width:100%;height:100%;display:block}
+.verso .qr-col{display:flex;flex-direction:column;align-items:center;gap:1.4mm;justify-self:start}
+.verso .tap{display:flex;align-items:center;gap:1.2mm;font-family:'Inter';font-size:4.4pt;letter-spacing:.12em;
+  text-transform:uppercase;font-weight:600;color:var(--or-c);white-space:nowrap}
+.verso .tap svg{width:3.4mm;height:3.4mm}
+.verso .infos{display:flex;flex-direction:column;gap:1.6mm}
+.verso .accroche{font-family:'Playfair Display',serif;font-style:italic;font-size:7.8pt;line-height:1.25;color:var(--creme)}
+.verso .accroche b{color:var(--or-c);font-style:normal}
+.verso .maisons{display:flex;flex-direction:column;gap:1.1mm;border-top:.2mm solid rgba(201,162,75,.45);padding-top:1.6mm}
+.verso .m{display:flex;align-items:baseline;gap:1.6mm}
+.verso .m .n{font-family:'Playfair Display',serif;font-weight:900;font-size:8pt;color:var(--or-c);min-width:4.6mm}
+.verso .m .d{font-family:'Inter';font-size:5.2pt;letter-spacing:.03em;color:var(--creme);flex:1;display:flex;justify-content:space-between;gap:1.6mm;white-space:nowrap}
+.verso .m .d b{font-weight:600;color:var(--or-c)}
+.verso .m .d .tel{white-space:nowrap;color:var(--or-c);font-weight:500}
+.verso .pied{font-family:'Inter';font-size:4.4pt;letter-spacing:.13em;text-transform:uppercase;color:var(--brume);white-space:nowrap}
+
+/* ================= documentation (écran seulement) ================= */
+.doc{margin-top:52px;border:1px solid rgba(201,162,75,.3);border-radius:12px;padding:26px 28px;background:rgba(243,236,221,.04)}
+.doc h3{font-family:'Playfair Display',serif;font-weight:600;font-size:20px;color:var(--or-c);margin-bottom:14px}
+.doc dl{display:grid;grid-template-columns:max-content 1fr;gap:8px 20px;font-size:13.5px}
+.doc dt{color:var(--or);font-weight:600;white-space:nowrap}
+.doc dd{color:#d5cab3}
+.doc .att{margin-top:16px;font-size:13px;color:#c9bda6;border-top:1px solid rgba(201,162,75,.2);padding-top:14px}
+.doc .att b{color:var(--or-c)}
+@media(max-width:640px){.doc dl{grid-template-columns:1fr;gap:2px}.doc dt{margin-top:10px}}
+.retour{text-align:center;margin-top:34px}
+.retour a{border:1px solid rgba(201,162,75,.4);border-radius:999px;padding:11px 24px;font-size:13px;text-decoration:none}
+.retour a:hover{border-color:var(--or)}
+.pied-page{margin-top:30px;text-align:center;font-size:11.5px;color:#8a7f6c;line-height:1.7}
+
+/* ================= impression ================= */
+@page{size:91.6mm 60mm;margin:0}
+@media print{
+  :root{--z:1}
+  body{background:#fff}
+  .page{max-width:none;padding:0}
+  header,.outils,h2.face-titre,.legende,.doc,.retour,.pied-page{display:none}
+  .feuille{display:block;break-after:page;page-break-after:always}
+  .feuille:last-of-type{break-after:auto;page-break-after:auto}
+  .vue{width:91.6mm;height:60mm}
+  .trait-coupe,.zone-sure{display:none}
+}
+@media(max-width:760px){:root{--z:1.15}}
+@media(max-width:430px){:root{--z:.95}}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="kk lab">Kit physique · démonstration Everywhere</div>
+    <h1>La carte NFC —<br><em>recto-verso, prête à imprimer.</em></h1>
+    <p>Format carte bancaire (85,6 × 54 mm), à la charte de vos deux maisons — noir et or,
+    la Tour Eiffel, la Place des Nations. On l'approche d'un téléphone&nbsp;: votre adresse en ligne s'ouvre.</p>
+  </header>
+
+  <div class="outils">
+    <button type="button" onclick="window.print()">Imprimer le gabarit</button>
+    <span class="hint">L'impression sort deux pages au format exact 91,6 × 60 mm (fond perdu compris), sans les guides.</span>
+  </div>
+
+  <h2 class="face-titre">Recto</h2>
+  <div class="feuille">
+    <div class="vue">
+      <div class="carte recto">
+        <div class="filet" aria-hidden="true"></div>
+        <span class="coin a" aria-hidden="true"></span><span class="coin b" aria-hidden="true"></span>
+        <span class="coin c" aria-hidden="true"></span><span class="coin d" aria-hidden="true"></span>
+        <div class="centre">
+          <svg class="eiffel" viewBox="0 0 48 74" fill="none" stroke="#c9a24b" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+            <path d="M24 2 V9
+                     M24 9 C22.5 22 19 38 9 64
+                     M24 9 C25.5 22 29 38 39 64
+                     M24 9 C23.4 22 22 40 17.5 64
+                     M24 9 C24.6 22 26 40 30.5 64
+                     M19.5 24 H28.5
+                     M15.5 40 H32.5
+                     M17.5 64 Q24 52 30.5 64
+                     M4 64 H15 M33 64 H44"/>
+          </svg>
+          <div class="nom1">Le Paris</div>
+          <div class="et">&amp;</div>
+          <div class="nom2">Les Friteries de Paris</div>
+          <div class="ligne-or" aria-hidden="true"></div>
+          <div class="adresse">Place des Nations · Maubeuge</div>
+        </div>
+        <div class="trait-coupe" aria-hidden="true"></div>
+        <div class="zone-sure" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+  <div class="legende"><span><i></i>trait de coupe (85,6 × 54)</span><span class="s"><i></i>zone de sécurité</span></div>
+
+  <h2 class="face-titre">Verso</h2>
+  <div class="feuille">
+    <div class="vue">
+      <div class="carte verso">
+        <div class="filet" aria-hidden="true"></div>
+        <div class="contenu">
+          <div class="qr-col">
+            <div class="qr-tuile"><img src="qr-leparis.png" alt="QR code vers l'adresse en ligne des deux maisons"></div>
+            <div class="tap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#e7c988" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+                <path d="M8.5 8.5a5 5 0 0 1 7 0M6 6a8.5 8.5 0 0 1 12 0M11 11.2a2.2 2.2 0 0 1 2 0"/>
+                <rect x="9.2" y="13.6" width="5.6" height="8" rx="1.1"/>
+              </svg>
+              Approchez · scannez
+            </div>
+          </div>
+          <div class="infos">
+            <div class="accroche">Deux maisons, une place —<br><b>une seule adresse en ligne.</b></div>
+            <div class="maisons">
+              <div class="m"><span class="n">36</span><span class="d"><span><b>Le Paris</b> — café · bar</span><span class="tel">03 27 64 63 16</span></span></div>
+              <div class="m"><span class="n">40</span><span class="d"><span><b>Les Friteries</b> — restaurant</span><span class="tel">03 61 21 72 08</span></span></div>
+            </div>
+            <div class="pied">36 &amp; 40, Place des Nations · 59600 Maubeuge</div>
+          </div>
+        </div>
+        <div class="trait-coupe" aria-hidden="true"></div>
+        <div class="zone-sure" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+  <div class="legende"><span><i></i>trait de coupe (85,6 × 54)</span><span class="s"><i></i>zone de sécurité</span></div>
+
+  <div class="doc">
+    <h3>Fiche technique du gabarit</h3>
+    <dl>
+      <dt>Format fini</dt><dd>85,6 × 54 mm (ISO/CEI 7810 ID-1 — format carte bancaire), coins arrondis 3 mm à la découpe.</dd>
+      <dt>Fond perdu</dt><dd>3 mm sur les quatre côtés — le fichier imprimé fait 91,6 × 60 mm ; les fonds noirs filent jusqu'au bord.</dd>
+      <dt>Zone de sécurité</dt><dd>3 mm en retrait du trait de coupe ; tous les textes et le QR restent à l'intérieur.</dd>
+      <dt>Couleurs</dt><dd>Noir profond #0f0c0a · or #c9a24b / #e7c988 (écran). Conversion CMJN par l'imprimeur ; en option, l'or en ton direct métallisé.</dd>
+      <dt>Typographies</dt><dd>Alex Brush (scripts, dans l'esprit de vos enseignes) · Playfair Display · Inter.</dd>
+      <dt>QR code</dt><dd>Fichier local <code>qr-leparis.png</code> (720 × 720 px, fourni dans le kit), posé sur pastille blanche 20,6 mm avec marge de silence.</dd>
+      <dt>Puce NFC</dt><dd>À encoder vers la même adresse que le QR au moment de la fabrication (kit des formules avec objets physiques).</dd>
+      <dt>Coordonnées portées</dt><dd>Le Paris (café · bar), 36, Place des Nations — 03 27 64 63 16 · Les Friteries de Paris (restaurant), 40, Place des Nations — 03 61 21 72 08 · 59600 Maubeuge.</dd>
+    </dl>
+    <p class="att"><b>Avant fabrication&nbsp;:</b> la destination du QR et de la puce NFC se vérifie ensemble
+    (elle pointera vers votre adresse définitive une fois le site en ligne), et les coordonnées imprimées
+    se valident avec vous. Démonstration — rien n'est fabriqué ni publié sans votre accord.</p>
+  </div>
+
+  <div class="retour"><a href="../">← Retour à la démonstration</a></div>
+
+  <p class="pied-page">Démonstration Everywhere — page non indexée, aucune donnée collectée.<br>
+  Le Paris &amp; Les Friteries de Paris · Place des Nations, Maubeuge.</p>
+</div>
+</body>
+</html>
